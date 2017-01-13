@@ -5,15 +5,6 @@
   <meta charset="UTF-8">
   <title>liveload</title>
   <link rel="stylesheet" href="/css/style.css">
-  <script src="/socket.io/socket.io.js"></script>
-  <script>
-    window.onload = function() {
-      const socket = io();
-      socket.on('reload', () => {
-        window.location.reload();
-      })
-    }
-  </script>
 </head>
 
 <body>
