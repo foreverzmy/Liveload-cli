@@ -1,5 +1,5 @@
 {
-  "name": "liveload",
+  "name": "liveload-cli",
   "version": "0.0.1",
   "description": "Let the page automatically reload.",
   "main": "index.js",
@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "liveload": "./start.js"
+    "llc": "./start.js"
   },
   "author": "Mervyz Zhang",
   "license": "ISC",
