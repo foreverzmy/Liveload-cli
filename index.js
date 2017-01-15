@@ -1,3 +1,5 @@
+#!/usr/bin/env node --harmony-async-await
+
 const http = require('http');
 const Koa = require('koa');
 const convert = require('koa-convert');

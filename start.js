@@ -1,7 +1,3 @@
-#!/usr/bin/env node
+#!/usr/bin/env node --harmont-async-await
 
-require("babel-core/register")({
-  presets: ['stage-3', 'es2015']
-});
-require("babel-polyfill");
-require("./index.js");
+require('runkoa')(__dirname + '/app.js')
