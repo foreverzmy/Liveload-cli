@@ -1,6 +1,6 @@
 {
   "name": "liveload-cli",
-  "version": "0.0.4",
+  "version": "0.0.7",
   "description": "A tool which detect the file change and reload the resource at client side automatically.",
   "homepage": "https://github.com/zmyforever1/Liveload-cli",
   "main": "index.js",
@@ -8,9 +8,10 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "llc": "./app.js"
+    "llc": "./index.js"
   },
   "keywords": [
+    "liveload-cli",
     "reload",
     "livereload",
     "autoreload"

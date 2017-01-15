@@ -51,11 +51,17 @@ let wathcers = {};
 function createWatch(file) {
   let absolute = path.join(root, file);
   if (wathcers[absolute] === true) return;
-  fs.watch(absolute, (e, filename) => {
-    if (e === 'change') {
-      console.log(e);
-      io.sockets.emit('reload');
+  fs.exists(absolute, (exists) => {
+    if (exists) {
+      fs.watch(absolute, (e, filename) => {
+        if (e === 'change') {
+          console.log(e);
+          io.sockets.emit('reload');
+        }
+      });
+      wathcers[absolute] = true;
+    } else {
+      console.log(`${absolute} doesn't exist.`)
     }
   });
-  wathcers[absolute] = true;
 }
