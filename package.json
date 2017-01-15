@@ -2,7 +2,7 @@
   "name": "liveload-cli",
   "version": "0.0.1",
   "description": "A tool which detect the file change and reload the resource at client side automatically.",
-  "homepage": "https://github.com/chemzqm/liveload",
+  "homepage": "https://github.com/zmyforever1/Liveload-cli",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,16 +10,16 @@
   "bin": {
     "llc": "./start.js"
   },
+  "keywords": [
+    "reload",
+    "livereload",
+    "autoreload"
+  ],
+  "author": "Mervyz Zhang <foreverzmyer@gmail.com>",
   "repository": {
     "type": "git",
     "url": "https://github.com/zmyforever1/Liveload-cli.git"
   },
-  "keywords": [
-    "liveload",
-    "node",
-    "easy"
-  ],
-  "author": "Mervyz Zhang",
   "license": "ISC",
   "dependencies": {
     "babel-core": "^6.21.0",
