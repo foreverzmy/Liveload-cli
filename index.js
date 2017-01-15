@@ -10,13 +10,15 @@ const app = new Koa();
 const server = http.Server(app.callback());
 const io = socket(server);
 
+const root = process.cwd();
+
 app
   .use(async(ctx, next) => {
     let file = ctx.path;
     if (file === '/') file = 'index.html';
     // 拦截请求html文件
     if (/\.html/.test(file) === true) {
-      let absolute = path.join(__dirname, file);
+      let absolute = path.join(root, file);
       let html = fs.readFileSync(absolute).toString();
       html = html.split('</head>');
       html = html.join(`
@@ -36,7 +38,7 @@ app
     createWatch(file);
   })
   // 将服务器设置为基本的静态文件服务器
-  .use(convert(statc(__dirname)));
+  .use(convert(statc(root)));
 
 server.listen('9000', () => {
   console.log('Server running at post 9000.')
@@ -45,7 +47,7 @@ server.listen('9000', () => {
 let wathcers = {};
 
 function createWatch(file) {
-  let absolute = path.join(__dirname, file);
+  let absolute = path.join(root, file);
   if (wathcers[absolute] === true) return;
   fs.watch(absolute, (e, filename) => {
     if (e === 'change') {

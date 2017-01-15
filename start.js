@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 require("babel-core/register")({
   presets: ['stage-3', 'es2015']
 });
